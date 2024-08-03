@@ -1,0 +1,54 @@
+[
+    {
+        "merged": "com.example.attendance.app-merged_res-15:/drawable-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.example.attendance.app-main-9:/drawable-xhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.example.attendance.app-merged_res-15:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.example.attendance.app-main-9:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.attendance.app-merged_res-15:/drawable-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.example.attendance.app-main-9:/drawable-xxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.example.attendance.app-merged_res-15:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.example.attendance.app-main-9:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.attendance.app-merged_res-15:/drawable-mdpi_ic_launcher_foreground.png.flat",
+        "source": "com.example.attendance.app-main-9:/drawable-mdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.example.attendance.app-merged_res-15:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.example.attendance.app-main-9:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.example.attendance.app-merged_res-15:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.example.attendance.app-main-9:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.attendance.app-merged_res-15:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.example.attendance.app-main-9:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.attendance.app-merged_res-15:/drawable-hdpi_ic_launcher_foreground.png.flat",
+        "source": "com.example.attendance.app-main-9:/drawable-hdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.example.attendance.app-merged_res-15:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.example.attendance.app-main-9:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.attendance.app-merged_res-15:/drawable-v21_launch_background.xml.flat",
+        "source": "com.example.attendance.app-main-9:/drawable-v21/launch_background.xml"
+    },
+    {
+        "merged": "com.example.attendance.app-merged_res-15:/drawable-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.example.attendance.app-main-9:/drawable-xxxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.example.attendance.app-merged_res-15:/drawable-v21_background.png.flat",
+        "source": "com.example.attendance.app-main-9:/drawable-v21/background.png"
+    }
+]
