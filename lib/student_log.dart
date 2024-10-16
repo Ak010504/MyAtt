@@ -34,7 +34,7 @@ class _StudentLogState extends State<StudentLog> {
           "STUDENT",
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
-        backgroundColor: const Color.fromARGB(255, 97, 167, 214),
+        backgroundColor: Color.fromARGB(255, 106, 141, 227),
         centerTitle: true,
         actions: <Widget>[
           if (_userNameInitials != null)
@@ -56,47 +56,63 @@ class _StudentLogState extends State<StudentLog> {
             )
         ],
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    _buildAttendancePercentageCircle(),
-                    const SizedBox(height: 20),
-                    Text(
-                      "Attendance Percent ",
-                      style: TextStyle(
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    const SizedBox(height: 20),
-                  ],
-                ),
+      body: Stack(
+        children: [
+          Container(
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Color(0xFF8CC0FF), // Top color of the gradient
+                  Color(0xFF3A48D5), // Bottom color of the gradient
+                ],
               ),
             ),
-            ListView.builder(
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              itemCount: _timetableData.length,
-              itemBuilder: (BuildContext context, int index) {
-                final subject = _timetableData.keys.elementAt(index);
-                final percentage = _timetableData[subject]['percentage'];
-                if (subject == 'info') {
-                  return Container(); // Return an empty container to avoid building
-                }
-                return _buildSubjectAttendanceCard(subject, percentage);
-              },
+            child: const SizedBox.expand(),
+          ),
+          SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        _buildAttendancePercentageCircle(),
+                        const SizedBox(height: 20),
+                        Text(
+                          "Attendance Percent ",
+                          style: TextStyle(
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        const SizedBox(height: 20),
+                      ],
+                    ),
+                  ),
+                ),
+                ListView.builder(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemCount: _timetableData.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    final subject = _timetableData.keys.elementAt(index);
+                    final percentage = _timetableData[subject]['percentage'];
+                    if (subject == 'info') {
+                      return Container(); // Return an empty container to avoid building
+                    }
+                    return _buildSubjectAttendanceCard(subject, percentage);
+                  },
+                ),
+              ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
-      backgroundColor: const Color.fromARGB(255, 151, 195, 220),
     );
   }
 

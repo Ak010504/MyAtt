@@ -26,6 +26,7 @@ class _SubjectDetailsWidgetState extends State<SubjectDetailsWidget> {
   Map<String, String> studentNames = {};
   List<String> sortedKeys = [];
   bool isLoading = true;
+  bool hasShownError = false; // Add this flag
 
   @override
   void initState() {
@@ -71,6 +72,7 @@ class _SubjectDetailsWidgetState extends State<SubjectDetailsWidget> {
           setState(() {
             sortedKeys = keys;
             isLoading = false;
+            hasShownError = false; // Reset error flag when data is loaded
           });
         }
       }
@@ -93,16 +95,49 @@ class _SubjectDetailsWidgetState extends State<SubjectDetailsWidget> {
     try {
       final studentDoc = classDoc.collection(roll).doc(widget.subject);
       final snapshot = await studentDoc.get();
-
+      var attendance = false;
       if (snapshot.exists) {
         final data = snapshot.data();
         if (data != null) {
           for (var key in data.keys) {
+            print(key.split(" -")[0].split(" "));
             if (key.split(' -')[0] ==
                 formattedDate + " " + widget.time.split('-')[0].split(' ')[0]) {
               attendanceData[roll] = data[key] == 'p' ? 'p' : 'a';
               buttonStates[roll] = data[key] != 'p';
+              attendance = true;
+              _showErrorOnce("Attendance already taken");
               return;
+            } else if (key.split(" -")[0].split(" ")[0] == formattedDate) {
+              attendanceData[roll] = data[key] == 'p' ? 'p' : 'a';
+              buttonStates[roll] = data[key] != 'p';
+              attendance = true;
+              _showErrorOnce("Last class attendance");
+              return;
+            }
+          }
+        }
+      }
+
+      if (attendance == false) {
+        final subdoc = classDoc.collection(roll);
+        final qry = await subdoc.get();
+        List<String> subjectNames = qry.docs.map((doc) => doc.id).toList();
+        for (var i in subjectNames) {
+          var attdoc = subdoc.doc(i);
+          var attsnap = await attdoc.get();
+          if (attsnap.exists) {
+            final data = attsnap.data();
+            if (data != null) {
+              for (var key in data.keys) {
+                if (key.split(" -")[0].split(" ")[0] == formattedDate) {
+                  attendanceData[roll] = data[key] == 'p' ? 'p' : 'a';
+                  buttonStates[roll] = data[key] != 'p';
+                  attendance = true;
+                  _showErrorOnce("Last Class Attendance");
+                  return;
+                }
+              }
             }
           }
         }
@@ -181,12 +216,24 @@ class _SubjectDetailsWidgetState extends State<SubjectDetailsWidget> {
               itemCount: sortedKeys.length,
               itemBuilder: (context, index) {
                 final roll = sortedKeys[index];
+
                 final isButtonPressed = buttonStates[roll] ?? false;
                 final isAbsent = attendanceData[roll] == 'a';
                 final studentName = studentNames[roll] ?? 'Unknown';
+                print(buttonStates);
 
                 String lastThreeChars =
                     roll.length >= 3 ? roll.substring(roll.length - 3) : roll;
+
+                // Determine button color based on attendance status and source
+                Color buttonColor;
+                if (isAbsent) {
+                  buttonColor = isButtonPressed
+                      ? Colors.red
+                      : Colors.orange; // Marked absentees vs loaded absentees
+                } else {
+                  buttonColor = Colors.white; // Present students
+                }
 
                 return Padding(
                   padding: const EdgeInsets.symmetric(
@@ -199,9 +246,8 @@ class _SubjectDetailsWidgetState extends State<SubjectDetailsWidget> {
                       });
                     },
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(
-                        isAbsent ? Colors.red : Colors.white,
-                      ),
+                      backgroundColor:
+                          MaterialStateProperty.all<Color>(buttonColor),
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -341,5 +387,18 @@ class _SubjectDetailsWidgetState extends State<SubjectDetailsWidget> {
       'percentage': attendancePercentage,
       'totalClasses': totalEntries,
     }, SetOptions(merge: true));
+  }
+
+  void _showErrorOnce(String message) {
+    if (!hasShownError) {
+      // Check if the error has already been shown
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(message),
+          backgroundColor: Colors.red,
+        ),
+      );
+      hasShownError = true; // Set the flag to true after showing the error
+    }
   }
 }

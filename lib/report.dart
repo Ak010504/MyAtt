@@ -286,6 +286,9 @@ class _FacultyReportState extends State<FacultyReport> {
 
   @override
   Widget build(BuildContext context) {
+    List<MapEntry<String, Map<String, dynamic>>> filteredAttendanceData =
+        _filteredEntries();
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Attendance Report'),
@@ -362,8 +365,8 @@ class _FacultyReportState extends State<FacultyReport> {
                   ),
                 Padding(
                   padding: const EdgeInsets.all(16.0),
-                  child:
-                      Text('Number of students: ${_filteredEntries().length}'),
+                  child: Text(
+                      'Number of students: ${filteredAttendanceData.length}'),
                 ),
                 Expanded(
                   child: SingleChildScrollView(
@@ -373,7 +376,7 @@ class _FacultyReportState extends State<FacultyReport> {
                         DataColumn(label: Text('Name')),
                         DataColumn(label: Text('Percentage')),
                       ],
-                      rows: _filteredEntries().map((entry) {
+                      rows: filteredAttendanceData.map((entry) {
                         String regNo = entry.key;
                         Map<String, dynamic> data = entry.value;
                         String name = data['name'];

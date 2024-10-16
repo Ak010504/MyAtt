@@ -22,3 +22,4 @@ com.example.attendance.app-packaged_res-20 D:\Amrit\College\SSN\CS\flutter\atten
 com.example.attendance.app-packaged_res-21 D:\Amrit\College\SSN\CS\flutter\attendance\build\flutter_plugin_android_lifecycle\intermediates\packaged_res\debug
 com.example.attendance.app-packaged_res-22 D:\Amrit\College\SSN\CS\flutter\attendance\build\path_provider_android\intermediates\packaged_res\debug
 com.example.attendance.app-packaged_res-23 D:\Amrit\College\SSN\CS\flutter\attendance\build\permission_handler_android\intermediates\packaged_res\debug
+com.example.attendance.app-packaged_res-24 D:\Amrit\College\SSN\CS\flutter\attendance\build\printing\intermediates\packaged_res\debug

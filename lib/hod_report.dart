@@ -546,7 +546,9 @@ class _HodReportState extends State<HodReport> {
                         columns: [
                           DataColumn(label: Text('Roll')),
                           DataColumn(label: Text('Name')),
-                          DataColumn(label: Text('Percentage')),
+                          DataColumn(
+                              label: Text('  %'),
+                              tooltip: 'Attendance Percentage'),
                         ],
                         rows: filteredAttendanceData.map((entry) {
                           return DataRow(

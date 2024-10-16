@@ -113,95 +113,122 @@ class _FacultyLogState extends State<FacultyLog> {
                           vertical: 15.0, horizontal: 16.0),
                       child: SizedBox(
                         width: double.infinity,
-                        child: ElevatedButton(
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => SubjectDetailsWidget(
-                                  subject: data[0],
-                                  section: data[3],
-                                  time: data[1],
-                                  selectedDate: _selectedDate,
-                                ),
-                              ),
-                            );
-                          },
-                          style: ElevatedButton.styleFrom(
-                            padding: const EdgeInsets.all(40.0),
-                            backgroundColor: Colors.white,
-                          ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
-                                children: [
-                                  SizedBox(width: 40),
-                                  Text(
-                                    'Subject: ${data[0]}',
-                                    style: TextStyle(
-                                      color: Color.fromARGB(255, 28, 61, 88),
-                                      fontSize: 16.0,
+                        child: Stack(
+                          children: [
+                            ElevatedButton(
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => SubjectDetailsWidget(
+                                      subject: data[0],
+                                      section: data[3],
+                                      time: data[1],
+                                      selectedDate: _selectedDate,
                                     ),
                                   ),
-                                ],
-                              ), // Use data directly
-                              const SizedBox(height: 5),
-                              if (data[2] != null && data[2].isNotEmpty)
-                                Row(
-                                  children: [
-                                    SizedBox(width: 40),
-                                    Text(
-                                      'Room No: ${data[2]}',
-                                      style: TextStyle(
-                                        color: Color.fromARGB(255, 28, 61, 88),
-                                        fontSize: 16.0,
+                                );
+                              },
+                              style: ElevatedButton.styleFrom(
+                                padding: const EdgeInsets.all(40.0),
+                                backgroundColor: Colors.white,
+                              ),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    children: [
+                                      SizedBox(width: 40),
+                                      Expanded(
+                                        // Add Expanded or Flexible here
+                                        child: Text(
+                                          'Subject: ${data[0]}',
+                                          style: TextStyle(
+                                            color:
+                                                Color.fromARGB(255, 28, 61, 88),
+                                            fontSize: 16.0,
+                                          ),
+                                          softWrap:
+                                              true, // Allows wrapping to the next line
+                                          overflow: TextOverflow
+                                              .visible, // Makes sure the text is visible
+                                        ),
                                       ),
-                                    ),
-                                  ],
-                                ),
-                              const SizedBox(height: 5),
-                              Row(
-                                children: [
-                                  SizedBox(width: 40),
-                                  Text(
-                                    'Time: ${data[1]}',
-                                    style: TextStyle(
-                                      color: Color.fromARGB(255, 28, 61, 88),
-                                      fontSize: 16.0,
-                                    ),
+                                    ],
                                   ),
-                                ],
-                              ),
-                              const SizedBox(height: 5),
-                              Row(
-                                children: [
-                                  SizedBox(width: 40),
-                                  Text(
-                                    'Section: ${data[3]}',
-                                    style: TextStyle(
-                                      color: Color.fromARGB(255, 28, 61, 88),
-                                      fontSize: 16.0,
+                                  const SizedBox(height: 5),
+                                  if (data[2] != null && data[2].isNotEmpty)
+                                    Row(
+                                      children: [
+                                        SizedBox(width: 40),
+                                        Text(
+                                          'Room No: ${data[2]}',
+                                          style: TextStyle(
+                                            color:
+                                                Color.fromARGB(255, 28, 61, 88),
+                                            fontSize: 16.0,
+                                          ),
+                                        ),
+                                      ],
                                     ),
-                                  ),
-                                ],
-                              ),
-                              const SizedBox(height: 5),
-                              if (data[4] == 'yes')
-                                Row(
-                                  children: [
-                                    SizedBox(width: 40),
-                                    Text(
-                                      'Substitution',
-                                      style: TextStyle(
-                                        color: Color.fromARGB(255, 28, 61, 88),
-                                        fontSize: 16.0,
+                                  const SizedBox(height: 5),
+                                  Row(
+                                    children: [
+                                      SizedBox(width: 40),
+                                      Text(
+                                        'Time: ${data[1]}',
+                                        style: TextStyle(
+                                          color:
+                                              Color.fromARGB(255, 28, 61, 88),
+                                          fontSize: 16.0,
+                                        ),
                                       ),
+                                    ],
+                                  ),
+                                  const SizedBox(height: 5),
+                                  Row(
+                                    children: [
+                                      SizedBox(width: 40),
+                                      Text(
+                                        'Section: ${data[3]}',
+                                        style: TextStyle(
+                                          color:
+                                              Color.fromARGB(255, 28, 61, 88),
+                                          fontSize: 16.0,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  const SizedBox(height: 5),
+                                  if (data[4] == 'yes')
+                                    Row(
+                                      children: [
+                                        SizedBox(width: 40),
+                                        Text(
+                                          'Substitution',
+                                          style: TextStyle(
+                                            color:
+                                                Color.fromARGB(255, 28, 61, 88),
+                                            fontSize: 16.0,
+                                          ),
+                                        ),
+                                      ],
                                     ),
-                                  ],
-                                ),
-                            ],
-                          ),
+                                ],
+                              ),
+                            ),
+                            Positioned(
+                              top: 50,
+                              right: 8,
+                              child: IconButton(
+                                icon: Icon(Icons.delete, color: Colors.red),
+                                onPressed: () {
+                                  _showDeleteConfirmationDialog(
+                                      context, key, data);
+                                },
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     );
@@ -438,6 +465,62 @@ class _FacultyLogState extends State<FacultyLog> {
       }
     } catch (error) {
       print('Error fetching user role: $error');
+    }
+  }
+
+  void _showDeleteConfirmationDialog(
+      BuildContext context, String key, List<dynamic> data) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Delete Period'),
+          content: Text('Do you want to delete this period?'),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text('No'),
+            ),
+            TextButton(
+              onPressed: () async {
+                Navigator.of(context).pop();
+                await _deletePeriod(key);
+              },
+              child: Text('Yes'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  Future<void> _deletePeriod(String key) async {
+    try {
+      String userId = FirebaseAuth.instance.currentUser!.uid;
+      DocumentSnapshot<Map<String, dynamic>> userSnapshot =
+          await FirebaseFirestore.instance
+              .collection('users')
+              .doc(userId)
+              .get();
+
+      if (userSnapshot.exists) {
+        String initials = userSnapshot.get('initials');
+        await FirebaseFirestore.instance
+            .collection('users')
+            .doc(userId)
+            .collection(initials)
+            .doc(_formatDay(_selectedDate))
+            .update({
+          key: FieldValue.delete(), // Remove the specific period
+        });
+        setState(() {
+          _timetableData.remove(key); // Update local state
+        });
+      }
+    } catch (error) {
+      print('Error deleting period: $error');
     }
   }
 }

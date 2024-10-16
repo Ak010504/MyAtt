@@ -9,6 +9,8 @@ MERGED from [:firebase_auth] D:\Amrit\College\SSN\CS\flutter\attendance\build\fi
 MERGED from [:firebase_auth] D:\Amrit\College\SSN\CS\flutter\attendance\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-15:19
 MERGED from [:firebase_core] D:\Amrit\College\SSN\CS\flutter\attendance\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-15:19
 MERGED from [:firebase_core] D:\Amrit\College\SSN\CS\flutter\attendance\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-15:19
+MERGED from [:printing] D:\Amrit\College\SSN\CS\flutter\attendance\build\printing\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-19:19
+MERGED from [:printing] D:\Amrit\College\SSN\CS\flutter\attendance\build\printing\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-19:19
 MERGED from [com.google.firebase:firebase-auth:22.3.1] C:\Users\amrit\.gradle\caches\transforms-3\154aa4d15a420854aef77793ffd75f4a\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:28:5-73:19
 MERGED from [com.google.firebase:firebase-auth:22.3.1] C:\Users\amrit\.gradle\caches\transforms-3\154aa4d15a420854aef77793ffd75f4a\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:28:5-73:19
 MERGED from [com.google.firebase:firebase-firestore:24.11.0] C:\Users\amrit\.gradle\caches\transforms-3\20a72481edd335dae5d5b84ad55cba6e\transformed\jetified-firebase-firestore-24.11.0\AndroidManifest.xml:13:5-24:19
@@ -58,6 +60,7 @@ MERGED from [:flutter_native_splash] D:\Amrit\College\SSN\CS\flutter\attendance\
 MERGED from [:flutter_plugin_android_lifecycle] D:\Amrit\College\SSN\CS\flutter\attendance\build\flutter_plugin_android_lifecycle\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:path_provider_android] D:\Amrit\College\SSN\CS\flutter\attendance\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:permission_handler_android] D:\Amrit\College\SSN\CS\flutter\attendance\build\permission_handler_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:printing] D:\Amrit\College\SSN\CS\flutter\attendance\build\printing\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-21:12
 MERGED from [com.google.firebase:firebase-auth:22.3.1] C:\Users\amrit\.gradle\caches\transforms-3\154aa4d15a420854aef77793ffd75f4a\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:17:1-75:12
 MERGED from [com.google.firebase:firebase-firestore:24.11.0] C:\Users\amrit\.gradle\caches\transforms-3\20a72481edd335dae5d5b84ad55cba6e\transformed\jetified-firebase-firestore-24.11.0\AndroidManifest.xml:2:1-26:12
 MERGED from [com.google.firebase:firebase-common-ktx:20.4.3] C:\Users\amrit\.gradle\caches\transforms-3\6f2914495b9d7b73c22bba0d3d9c57b2\transformed\jetified-firebase-common-ktx-20.4.3\AndroidManifest.xml:2:1-18:12
@@ -148,6 +151,8 @@ MERGED from [:path_provider_android] D:\Amrit\College\SSN\CS\flutter\attendance\
 MERGED from [:path_provider_android] D:\Amrit\College\SSN\CS\flutter\attendance\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:permission_handler_android] D:\Amrit\College\SSN\CS\flutter\attendance\build\permission_handler_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:permission_handler_android] D:\Amrit\College\SSN\CS\flutter\attendance\build\permission_handler_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:printing] D:\Amrit\College\SSN\CS\flutter\attendance\build\printing\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:printing] D:\Amrit\College\SSN\CS\flutter\attendance\build\printing\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.firebase:firebase-auth:22.3.1] C:\Users\amrit\.gradle\caches\transforms-3\154aa4d15a420854aef77793ffd75f4a\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:21:5-23:64
 MERGED from [com.google.firebase:firebase-auth:22.3.1] C:\Users\amrit\.gradle\caches\transforms-3\154aa4d15a420854aef77793ffd75f4a\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:21:5-23:64
 MERGED from [com.google.firebase:firebase-firestore:24.11.0] C:\Users\amrit\.gradle\caches\transforms-3\20a72481edd335dae5d5b84ad55cba6e\transformed\jetified-firebase-firestore-24.11.0\AndroidManifest.xml:6:5-44
@@ -327,6 +332,22 @@ ADDED from [:firebase_core] D:\Amrit\College\SSN\CS\flutter\attendance\build\fir
 		ADDED from [:firebase_core] D:\Amrit\College\SSN\CS\flutter\attendance\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
 	android:name
 		ADDED from [:firebase_core] D:\Amrit\College\SSN\CS\flutter\attendance\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-124
+provider#net.nfet.flutter.printing.PrintFileProvider
+ADDED from [:printing] D:\Amrit\College\SSN\CS\flutter\attendance\build\printing\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-18:20
+	android:grantUriPermissions
+		ADDED from [:printing] D:\Amrit\College\SSN\CS\flutter\attendance\build\printing\intermediates\merged_manifest\debug\AndroidManifest.xml:14:13-47
+	android:authorities
+		ADDED from [:printing] D:\Amrit\College\SSN\CS\flutter\attendance\build\printing\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-68
+	android:exported
+		ADDED from [:printing] D:\Amrit\College\SSN\CS\flutter\attendance\build\printing\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-37
+	android:name
+		ADDED from [:printing] D:\Amrit\College\SSN\CS\flutter\attendance\build\printing\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-71
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from [:printing] D:\Amrit\College\SSN\CS\flutter\attendance\build\printing\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-17:71
+	android:resource
+		ADDED from [:printing] D:\Amrit\College\SSN\CS\flutter\attendance\build\printing\intermediates\merged_manifest\debug\AndroidManifest.xml:17:17-68
+	android:name
+		ADDED from [:printing] D:\Amrit\College\SSN\CS\flutter\attendance\build\printing\intermediates\merged_manifest\debug\AndroidManifest.xml:16:17-67
 uses-permission#android.permission.INTERNET
 ADDED from [com.google.firebase:firebase-auth:22.3.1] C:\Users\amrit\.gradle\caches\transforms-3\154aa4d15a420854aef77793ffd75f4a\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:25:5-67
 MERGED from [com.google.firebase:firebase-firestore:24.11.0] C:\Users\amrit\.gradle\caches\transforms-3\20a72481edd335dae5d5b84ad55cba6e\transformed\jetified-firebase-firestore-24.11.0\AndroidManifest.xml:11:5-67
